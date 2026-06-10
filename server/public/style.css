@@ -63,8 +63,20 @@ h6 {
   align-items: center;
   padding: 20px 30px;
   background-color: #0d0009;
-  border-bottom: 1px solid #9b1fa1;
+  border-bottom: 2px solid #720578;
   box-shadow: 0 4px 20px rgba(155, 31, 161, 0.4);
+  clip-path: inset(0 0 -30px 0);
+}
+
+.header-container::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
+  box-shadow: 0 0 20px 4px rgba(155, 31, 161, 0.6);
 }
 
 .header-left {
@@ -73,7 +85,7 @@ h6 {
 }
 
 .header-left h1 {
-  font-size: 38px;
+  font-size: 60px;
   color: #fbcd86;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -119,8 +131,9 @@ h6 {
   height: 45vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 60px;
+  justify-content: center;
+  margin-top: -20px;
+  padding: 0;
   border-bottom: 2px solid #9b1fa1;
 }
 
@@ -178,8 +191,10 @@ h6 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 16px 20px 40px;
   gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Spotlight Section */
@@ -267,6 +282,10 @@ h6 {
   border-left: 3px solid #9b1fa1;
   padding-left: 14px;
   margin: 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .spotlight-link {
@@ -318,7 +337,7 @@ article:hover {
   background: rgba(13, 0, 9, 0.82);
   color: #fff;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 article:hover .artist-card-overlay {
@@ -327,27 +346,28 @@ article:hover .artist-card-overlay {
 
 .artist-brief {
   padding-top: 50px;
-  padding-left: 30px;
+  text-align: center;
   letter-spacing: 3px;
 }
 
 .artist-card-name {
-  font-size: 22px;
-  line-height: 32px;
+  font-size: 38px;
+  line-height: 50px;
   transform: translateY(40px);
-  transition: all 0.7s;
+  transition: all 0.25s;
 }
 
 .artist-card-name h3 {
-  margin: 0;
+  margin: 5px 0;
   color: #f0e6f6;
+  text-align: center;
 }
 
 .artist-card-name hr {
   border: none;
-  border-top: 1px solid #9b1fa1;
-  margin: 8px 0;
-  width: 60%;
+  border-top: 2px solid #9b1fa1;
+  margin: 10px 15px;
+  width: 90%;
 }
 
 article:hover .artist-card-name {
@@ -356,54 +376,25 @@ article:hover .artist-card-name {
 
 .artist-card-genre {
   padding-top: 20px;
-  padding-left: 0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.7s;
+  transition: all 0.25s;
   color: #e6a0f0;
   letter-spacing: 2px;
 }
 
 article:hover .artist-card-genre {
   transform: translateY(0);
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
   opacity: 1;
 }
 
 .artist-card-genre p {
   margin: 0 0 12px 0;
   color: #e6a0f0;
-}
-
-.artist-card-link {
-  padding-top: 12px;
-  padding-left: 0;
-  opacity: 0;
-  transition: all 0.7s;
-}
-
-article:hover .artist-card-link {
-  transition-delay: 0.6s;
-  opacity: 1;
-}
-
-.artist-card-link a {
-  background-color: #fbcd86;
-  color: #0d0009;
-  border-radius: 4px;
-  padding: 8px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: background-color 0.2s ease;
-}
-
-.artist-card-link a:hover {
-  background-color: #9b1fa1;
-  color: #fff;
+  text-align: center;
 }
 
 /* Detail Page */
@@ -471,26 +462,101 @@ article:hover .artist-card-link {
   text-transform: uppercase;
   transition: all 0.2s ease;
   background: none;
-}
-
-#links a:first-child {
-  border: 2px solid #1db954;
-  color: #1db954;
-}
-
-#links a:first-child:hover {
-  background-color: #1db954;
-  color: #fff;
-}
-
-#links a:last-child {
   border: 2px solid #9b1fa1;
   color: #e6a0f0;
 }
 
-#links a:last-child:hover {
+#links a:hover {
   background-color: #9b1fa1;
   color: #fff;
+}
+
+#links a.spotify-link {
+  border: 2px solid #1db954;
+  color: #1db954;
+}
+
+#links a.spotify-link:hover {
+  background-color: #1db954;
+  color: #fff;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 30px 0 0 60px;
+  color: #e6a0f0;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid #3d003d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #3d003d;
+  border-color: #9b1fa1;
+  color: #fff;
+}
+
+/* Search Bar */
+#search-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 16px 0;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #3d003d;
+  background-color: #1a0020;
+  color: #f0e6f6;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 1px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-bar input:focus {
+  border-color: #9b1fa1;
+  box-shadow: 0 0 10px rgba(155, 31, 161, 0.3);
+}
+
+.search-bar input::placeholder {
+  color: #b08fbf;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #3d003d;
+  background-color: transparent;
+  color: #e6a0f0;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-bar button:hover {
+  background-color: #3d003d;
+  border-color: #9b1fa1;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(155, 31, 161, 0.4);
 }
 
 /* 404 Page */
@@ -502,6 +568,13 @@ article:hover .artist-card-link {
   justify-items: center;
   align-items: center;
   margin: 80px auto;
+}
+
+.no-results {
+  color: #b08fbf;
+  text-align: center;
+  width: 100%;
+  margin-top: 60px;
 }
 
 .page-not-found h2 {

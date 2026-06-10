@@ -1,3 +1,14 @@
+const banner = document.querySelector("#banner");
+if (banner) {
+  banner.innerHTML = `
+    <div class="nav-container">
+      <h1> OPM Classics & New Releases</h1>
+      <p>Your guide to the best of Original Pilipino Music.</p>
+      <a href="/all-artists" role="button">All Artists</a>
+    </div>
+  `;
+}
+
 const renderSpotlight = async () => {
   const response = await fetch("/artists");
   const data = await response.json();
@@ -25,7 +36,7 @@ const renderSpotlight = async () => {
           <img src="${artist.image}" alt="${artist.name}" class="spotlight-image">
           <div class="spotlight-details">
             <h3>${artist.name}</h3>
-            <p class="spotlight-genre">${artist.genre} · ${artist.origin}</p>
+            <p class="spotlight-genre">${artist.genre} &middot; ${artist.origin}</p>
             <p class="spotlight-formed">Formed: ${artist.formed}</p>
             <p class="spotlight-label">Label: ${artist.label}</p>
             <p class="spotlight-description">${artist.description}</p>

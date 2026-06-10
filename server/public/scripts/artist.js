@@ -33,6 +33,12 @@ const renderArtist = async () => {
       "Submitted on: " + artist.submittedOn;
     document.title = "OPM Wiki - " + artist.name;
 
+    const backButton = document.createElement("a");
+    backButton.textContent = "← All Artists";
+    backButton.href = "/all-artists";
+    backButton.className = "back-button";
+    document.getElementById("back-container").appendChild(backButton);
+
     const linksDiv = document.getElementById("links");
 
     if (artist.spotifyUrl) {
@@ -40,6 +46,7 @@ const renderArtist = async () => {
       spotify.textContent = "Spotify";
       spotify.href = artist.spotifyUrl;
       spotify.target = "_blank";
+      spotify.className = "spotify-link";
       linksDiv.appendChild(spotify);
     }
 

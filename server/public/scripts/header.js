@@ -8,6 +8,7 @@ headerLeft.className = "header-left";
 
 const headerTitle = document.createElement("h1");
 headerTitle.textContent = "OPM Wiki";
+headerTitle.addEventListener("click", () => (window.location = "/"));
 headerLeft.appendChild(headerTitle);
 
 const headerRight = document.createElement("div");
@@ -30,14 +31,3 @@ headerRight.appendChild(allArtistsButton);
 headerContainer.appendChild(headerLeft);
 headerContainer.appendChild(headerRight);
 header.appendChild(headerContainer);
-
-const banner = document.querySelector("#banner");
-if (banner) {
-  banner.innerHTML = `
-    <div class="nav-container">
-      <h1> OPM Classics & New Releases</h1>
-      <p>Your guide to the best Original Pilipino Music artists 🎵</p>
-      <a href="/all-artists" role="button">All Artists</a>
-    </div>
-  `;
-}

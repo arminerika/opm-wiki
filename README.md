@@ -36,10 +36,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://i.imgur.com/QPV8B4q.gif' title='OPM Wiki Walkthrough' width='600' alt='OPM Wiki Walkthrough' />
+[OPM Wiki Walkthrough](https://i.imgur.com/QPV8B4q.gif)
 
-- https://imgur.com/a/d3lOWKB
-- https://i.imgur.com/QPV8B4q.gif
+![OPM Wiki Walkthrough](opm_wiki.gif)
+
+https://imgur.com/a/d3lOWKB
 
 GIF created with ScreenToGif
 
