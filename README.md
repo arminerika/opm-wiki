@@ -2,9 +2,9 @@
 
 Submitted by: **Armin Erika Polanco**
 
-About this web app: **OPM Wiki is a list-based web app that showcases Original Pilipino Music artists. Users can browse a curated collection of OPM artists, view detailed information about each one, and listen to their music via embedded Spotify links.**
+About this web app: **OPM Wiki is a list-based web app showcasing Original Pilipino Music artists. Users can browse a curated collection of OPM artists, search and filter by name, genre, or origin, discover a random artist, and view detailed information including embedded Spotify links.**
 
-Time spent: **6** hours
+Time spent: **X** hours
 
 ## Required Features
 
@@ -28,31 +28,39 @@ The following **additional** features are implemented:
 - [x] Artist Spotlight section on the home page that randomly features a different artist on each visit
 - [x] Spotify embedded player on the home page spotlight section
 - [x] Spotify and website links on each artist detail page
-- [x] Animated card hover overlay with sliding name, genre, and info button
-- [x] Hero banner on the home page with a CTA to the full artist list
+- [x] Animated card hover overlay with sliding name, genre, origin, and formation year
+- [x] Entire card is clickable — no need to wait for hover animation
+- [x] Search bar on the All Artists page filtering by name, genre, or origin in real time
+- [x] Random Artist button that navigates to a randomly selected artist detail page
 - [x] Dedicated landing page separate from the artist list page
+- [x] Back to All Artists button on each artist detail page
+- [x] Custom dark purple and gold grunge aesthetic built on top of Picocss
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-[OPM Wiki Walkthrough](https://i.imgur.com/QPV8B4q.gif)
+- [OPM Wiki Walkthrough V1](https://i.imgur.com/QPV8B4q.gif)
+  - https://imgur.com/a/d3lOWKB
 
-![OPM Wiki Walkthrough](opm_wiki.gif)
+  - ![OPM Wiki Walkthrough](opm_wiki.gif)
 
-https://imgur.com/a/d3lOWKB
+- [OPM Wiki Walkthrough V2](https://i.imgur.com/Vq0qFek.gif)
+  - https://imgur.com/a/nkAvjhT
+
+  - ![OPM Wiki Walkthrough](opm_wiki_v2.gif)
 
 GIF created with ScreenToGif
 
 ## Notes
 
-One challenge was managing the client-server relationship between Vite and Express,
-particularly getting static files and routes to resolve correctly in the production build.
+Building OPM Wiki was a great introduction to Express routing and vanilla DOM manipulation. One challenge was managing the client-server relationship between Vite and Express, particularly getting static files and routes to resolve correctly in the production build. Picocss was integrated using its CSS variable system and themed to match the custom dark purple and gold aesthetic.
 
 Planned future improvements include:
 
-- Search and filter functionality on the All Artists page
-- Expanded artist detail pages with more images, discography info, and social links
+- Expanded artist detail pages with discography info and social links
+- A "You might also like" section on artist detail pages based on genre
+- More artists across all OPM genres
 
 ## License
 
