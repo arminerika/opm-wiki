@@ -8,6 +8,10 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+app.get("/artists/:artistId", (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, "./public/artist.html"));
+});
+
 app.use("/artists", artistsRouter);
 
 app.get("/", (req, res) => {
@@ -20,13 +24,9 @@ app.get("/all-artists", (req, res) => {
     .sendFile(path.resolve(__dirname, "./public/all-artists.html"));
 });
 
-app.get("/404", (req, res) => {
-  res.status(404).sendFile(path.resolve(__dirname, "./public/404.html"));
-});
-
 app.use(express.static(path.join(__dirname, "./public")));
 
-app.use((req, res) => {
+app.get("/404", (req, res) => {
   res.status(404).sendFile(path.resolve(__dirname, "./public/404.html"));
 });
 

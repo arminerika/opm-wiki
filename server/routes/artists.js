@@ -8,12 +8,20 @@ const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// GET all artists JSON
 router.get("/", (req, res) => {
   res.status(200).json(artistData);
 });
 
-router.get("/:artistId", (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, "../public/artist.html"));
+// GET single artist JSON by ID
+router.get("/api/:artistId", (req, res) => {
+  const id = parseInt(req.params.artistId);
+  const artist = artistData.find((a) => a.id === id);
+  if (!artist) {
+    res.status(404).json({ error: "Artist not found" });
+  } else {
+    res.status(200).json(artist);
+  }
 });
 
 export default router;
