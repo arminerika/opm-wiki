@@ -19,8 +19,8 @@ const renderSpotlight = async () => {
   const artist = data[Math.floor(Math.random() * data.length)];
 
   // Extract Spotify artist ID from the URL
-  const spotifyId = artist.spotifyUrl
-    ? artist.spotifyUrl.split("/").pop()
+  const spotifyId = artist.spotifyurl
+    ? artist.spotifyurl.split("/").pop()
     : null;
 
   const mainContent = document.getElementById("main-content");

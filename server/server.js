@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import express from "express";
+import "./config/dotenv.js";
 import artistsRouter from "./routes/artists.js";
 
 const app = express();

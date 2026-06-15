@@ -1,33 +1,30 @@
-# WEB103 Project 1 - _OPM Wiki_
+# WEB103 Project 2 - _OPM Wiki_
 
 Submitted by: **Armin Erika Polanco**
 
-About this web app: **OPM Wiki is a list-based web app showcasing Original Pilipino Music artists. Users can browse a curated collection of OPM artists, search and filter by name, genre, or origin, discover a random artist, and view detailed information including embedded Spotify links.**
+About this web app: **OPM Wiki is a list-based web app showcasing Original Pilipino Music artists, now powered by a PostgreSQL database hosted on Render. Users can browse a curated collection of OPM artists, search and filter by name, genre, or origin, discover a random artist, and view detailed information including embedded Spotify players.**
 
-Time spent: **X** hours
+Time spent: \*_3_ hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
+<!-- Make sure to check off completed functionality below -->
+
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app displays a title**
-- [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
-- [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
-  - [x] **Each detail view should be a unique endpoint, such as `localhost:3001/artists/1` and `localhost:3001/artists/2`**
-  - [x] _Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation_
-- [x] **The web app serves an appropriate 404 page when no matching route is defined**
-- [x] **The web app is styled using Picocss**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT \* FROM tablename;' to display your table contents.**
 
 The following **optional** features are implemented:
 
-- [x] The web app displays items in a unique format, such as cards rather than lists or animated list items
+- [x] The user can search for items by a specific attribute
 
 The following **additional** features are implemented:
 
 - [x] Artist Spotlight section on the home page that randomly features a different artist on each visit
-- [x] Spotify embedded player on the home page spotlight section
-- [x] Spotify and website links on each artist detail page
+- [x] Spotify embedded player on both the home page spotlight and individual artist detail pages
 - [x] Animated card hover overlay with sliding name, genre, origin, and formation year
 - [x] Entire card is clickable — no need to wait for hover animation
 - [x] Search bar on the All Artists page filtering by name, genre, or origin in real time
@@ -35,32 +32,23 @@ The following **additional** features are implemented:
 - [x] Dedicated landing page separate from the artist list page
 - [x] Back to All Artists button on each artist detail page
 - [x] Custom dark purple and gold grunge aesthetic built on top of Picocss
+- [x] Single artist fetched via dedicated API endpoint `/artists/api/:artistId` instead of client-side filtering
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-- [OPM Wiki Walkthrough V1](https://i.imgur.com/QPV8B4q.gif)
-  - https://imgur.com/a/d3lOWKB
+[Project 2 - OPM Wiki Walkthrough](https://i.imgur.com/dBl5a0l.gif)
 
-  - ![OPM Wiki Walkthrough](opm_wiki.gif)
+- [https://imgur.com/a/mduaEVJ]
 
-- [OPM Wiki Walkthrough V2](https://i.imgur.com/Vq0qFek.gif)
-  - https://imgur.com/a/nkAvjhT
-
-  - ![OPM Wiki Walkthrough](opm_wiki_v2.gif)
+![OPM Wiki Walkthrough](opm_wiki_v3.gif)
 
 GIF created with ScreenToGif
 
 ## Notes
 
-Building OPM Wiki was a great introduction to Express routing and vanilla DOM manipulation. One challenge was managing the client-server relationship between Vite and Express, particularly getting static files and routes to resolve correctly in the production build. Picocss was integrated using its CSS variable system and themed to match the custom dark purple and gold aesthetic.
-
-Planned future improvements include:
-
-- Expanded artist detail pages with discography info and social links
-- A "You might also like" section on artist detail pages based on genre
-- More artists across all OPM genres
+The main challenge in Unit 2 was migrating from a static JavaScript data file to a PostgreSQL database hosted on Render. One gotcha was that PostgreSQL returns column names in lowercase regardless of how they were defined, so camelCase references in the frontend (like `spotifyUrl`) had to be updated to lowercase (`spotifyurl`). The database is shared with the Unit 1 UnEarthed lab project, with the OPM Wiki artists stored in a separate `artists` table.
 
 ## License
 

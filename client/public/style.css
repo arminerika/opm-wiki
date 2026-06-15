@@ -481,6 +481,18 @@ article:hover .artist-card-genre {
   color: #fff;
 }
 
+/* Spotify Embed */
+#artist-spotify-embed {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#artist-spotify-embed iframe {
+  border-radius: 12px;
+  border: 1px solid #3d003d;
+  width: 100%;
+}
+
 .back-button {
   display: inline-block;
   margin: 30px 0 0 60px;
