@@ -44,6 +44,8 @@ Here's a walkthrough of implemented required features:
 
 ![OPM Wiki Walkthrough](opm_wiki_v3.gif)
 
+![Render Dashboard](render_dashboard.png)
+
 GIF created with ScreenToGif
 
 ## Notes
